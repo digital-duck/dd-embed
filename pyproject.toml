@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dd-embed"
+version = "0.1.0"
+description = "Shared embedding model abstraction layer for Digital Duck projects"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Digital Duck", email = "p2p2learn@outlook.com"},
+]
+keywords = ["embedding", "digital-duck", "ai", "sentence-transformers", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["numpy>=1.24.0"]
+
+[project.optional-dependencies]
+sentence-transformers = ["sentence-transformers>=2.0.0"]
+transformers = ["transformers>=4.30.0", "torch>=2.0.0"]
+openai = ["openai>=1.0.0"]
+voyageai = ["voyageai>=0.1.0"]
+gemini = ["google-generativeai>=0.3.0"]
+all = [
+    "sentence-transformers>=2.0.0",
+    "openai>=1.0.0",
+    "voyageai>=0.1.0",
+    "google-generativeai>=0.3.0",
+]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage   = "https://github.com/digital-duck/dd-embed"
+Repository = "https://github.com/digital-duck/dd-embed"
+Issues     = "https://github.com/digital-duck/dd-embed/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dd_embed*"]
